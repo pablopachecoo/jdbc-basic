@@ -14,6 +14,7 @@ public class MovieController {
         this.movieService = movieService;
     }
 
+
     @GetMapping
     public List<Movie> listMovies() {
         return movieService.getMovies();

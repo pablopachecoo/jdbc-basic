@@ -10,6 +10,9 @@ public interface MovieDao {
     @Transactional
     int insertMovie(Movie movie);
     int deleteMovie(int id);
+
+    int editMovie(int id);
+
     Optional<Movie> selectMovieById(int id);
     // TODO: Update
 }

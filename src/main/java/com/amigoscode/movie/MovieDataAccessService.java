@@ -1,6 +1,5 @@
 package com.amigoscode.movie;
 
-import org.apache.tomcat.jni.Local;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -49,6 +48,17 @@ public class MovieDataAccessService implements MovieDao {
     public int deleteMovie(int id) {
         var sql = """
                 DELETE from movie
+                WHERE id = ?;
+                """;
+        return jdbcTemplate.update(sql, id);
+
+
+    }
+
+    @Override
+    public int editMovie(int id) {
+        var sql = """
+                EDIT from movie
                 WHERE id = ?;
                 """;
         return jdbcTemplate.update(sql, id);
