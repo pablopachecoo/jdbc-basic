@@ -5,6 +5,7 @@ import com.amigoscode.movie.Movie;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Repository
@@ -40,7 +41,18 @@ public class ActorDataAccessService implements ActorDao{
         //TODO
         // Só inserir um ator, se ter um filme com o mesmo id,
         // retornar erro customizado se id não existir
-        // amanhã eu começo a implementar isso
+        // amanhã eu começo a implementar isso 2.0
+
+        System.out.println("INSERT ACTOR");
+        String nome = actor.name();
+        String sql = """
+                INSERT INTO MOVIE(name, release_date) VALUES (?,?);
+                """;
+//        return jdbcTemplate.update(
+//                sql,
+//                movie.name(), movie.releaseDate()
+//        );
+
         return 0;
     }
 
