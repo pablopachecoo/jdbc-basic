@@ -20,18 +20,17 @@ public class ActorDataAccessService implements ActorDao{
 
     @Override
     public List<Actor> selectActors() {
+
         var sql = """
                 SELECT id, movie, name
                 FROM actor
                 LIMIT 100;
                 """;
         System.out.println(sql);
-        return jdbcTemplate.query(sql, (resultSet, i) -> {
-            return new Actor(
-                    resultSet.getInt("id"),
-                    resultSet.getString("name")
-            );
-        });
+        return jdbcTemplate.query(sql, (resultSet, i) -> new Actor(
+                resultSet.getInt("id"),
+                resultSet.getString("name")
+        ));
     }
 
 
