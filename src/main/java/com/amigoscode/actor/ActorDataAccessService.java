@@ -46,7 +46,7 @@ public class ActorDataAccessService implements ActorDao{
         System.out.println("INSERT ACTOR");
         String nome = actor.name();
         String sql = """
-                INSERT INTO MOVIE(name, release_date) VALUES (?,?);
+                INSERT INTO ACTOR(name, release_date) VALUES (?,?);
                 """;
 //        return jdbcTemplate.update(
 //                sql,
